@@ -453,7 +453,7 @@ export default function App() {
     if (isRefresh) setRefreshSpin(true);
     else setFetching(true);
     try {
-      const res = await axios.get("http://localhost:5000/appointments");
+      const res = await axios.get("https://appointmentbooking-komo.onrender.com/appointments");
       setAppointments(res.data);
     } catch (err) {
       console.error(err);
@@ -474,7 +474,7 @@ export default function App() {
     }
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/appointments", formData);
+      const res = await axios.post("https://appointmentbooking-komo.onrender.com/appointments", formData);
       console.log(res.data);
       showToast("Appointment booked successfully!");
       setFormData({ name: "", phone: "", date: "", time: "" });
